@@ -1,0 +1,22 @@
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.calculator-button.zero {
+  grid-column: span 1;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .button-grid {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .button-grid {
+    gap: 0.375rem;
+  }
+}

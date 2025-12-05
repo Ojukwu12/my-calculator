@@ -1,0 +1,80 @@
+.calculator-button {
+  background: var(--secondary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 1.5rem;
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.calculator-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.calculator-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.calculator-button.number {
+  background: #334155;
+}
+
+.calculator-button.number:hover {
+  background: #475569;
+}
+
+.calculator-button.operator {
+  background: var(--primary-color);
+}
+
+.calculator-button.operator:hover {
+  background: var(--primary-hover);
+}
+
+.calculator-button.equals {
+  background: var(--success-color);
+  grid-column: span 2;
+}
+
+.calculator-button.equals:hover {
+  background: #059669;
+}
+
+.calculator-button.clear {
+  background: var(--error-color);
+  grid-column: span 2;
+}
+
+.calculator-button.clear:hover {
+  background: #dc2626;
+}
+
+.calculator-button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .calculator-button {
+    font-size: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .calculator-button {
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
