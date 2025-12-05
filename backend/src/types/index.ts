@@ -13,7 +13,7 @@ export interface ErrorResponse {
   statusCode: number;
 }
 
-// Future AI integration types (not implemented yet, but ready for extension)
+// AI integration types
 export interface AIExplainRequest {
   expression: string;
   result: number | string;
@@ -22,5 +22,14 @@ export interface AIExplainRequest {
 export interface AIExplainResponse {
   explanation?: string;
   learningResources?: string[];
+  error?: string;
+}
+
+export interface AISuggestResourcesRequest {
+  expression: string;
+}
+
+export interface AISuggestResourcesResponse {
+  resources?: string[];
   error?: string;
 }

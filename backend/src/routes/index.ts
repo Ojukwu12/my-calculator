@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { CalculatorController } from '../controllers/calculator.controller';
+import { AIController } from '../controllers/ai.controller';
 
 const router = Router();
 
@@ -9,8 +10,8 @@ router.post('/calculate', CalculatorController.calculate);
 // Health check endpoint
 router.get('/health', CalculatorController.health);
 
-// Placeholder for future AI endpoints (not implemented yet)
-// router.post('/ai-explain', AIController.explain);
-// router.post('/ai-suggest-resources', AIController.suggestResources);
+// AI endpoints
+router.post('/ai/explain', AIController.explain);
+router.post('/ai/suggest-resources', AIController.suggestResources);
 
 export default router;

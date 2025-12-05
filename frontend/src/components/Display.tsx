@@ -7,6 +7,8 @@ interface DisplayProps {
   operation: string | null;
   result: string | null;
   error: string | null;
+  onAskExplanation?: () => void;
+  onAskResources?: () => void;
 }
 
 export const Display: React.FC<DisplayProps> = ({
@@ -15,6 +17,8 @@ export const Display: React.FC<DisplayProps> = ({
   operation,
   result,
   error,
+  onAskExplanation,
+  onAskResources,
 }) => {
   const displayPreviousCalculation = () => {
     if (result && previousValue) {
@@ -39,6 +43,20 @@ export const Display: React.FC<DisplayProps> = ({
       {error && (
         <div className="error-message" data-testid="error-message">
           Error: {error}
+        </div>
+      )}
+      {result && !error && (
+        <div className="ai-buttons">
+          {onAskExplanation && (
+            <button className="ai-btn explain-btn" onClick={onAskExplanation} title="Get AI explanation">
+              💡 Explain
+            </button>
+          )}
+          {onAskResources && (
+            <button className="ai-btn resources-btn" onClick={onAskResources} title="Get learning resources">
+              📚 Learn
+            </button>
+          )}
         </div>
       )}
     </div>
