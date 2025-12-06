@@ -1,0 +1,15 @@
+{
+  "name": "calculator-full-stack",
+  "version": "1.0.0",
+  "description": "Production calculator with full-stack deployment",
+  "main": "backend/dist/server.js",
+  "scripts": {
+    "build": "bash build.sh",
+    "start": "bash start.sh",
+    "dev": "cd backend && npm run dev",
+    "test": "cd backend && npm test"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
